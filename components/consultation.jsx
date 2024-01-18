@@ -40,7 +40,7 @@ const ConsultationForm = () => {
     });
 
 
-    const showPreviousExperience = Number(formData.age) < 40;
+    const showPreviousExperience = Number(formData.age) > 40;
 
     return (
         <div className='flex flex-col items-center gap-5 w-full py-20' ref={ref}>

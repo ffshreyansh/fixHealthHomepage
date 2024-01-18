@@ -82,21 +82,21 @@ export default function NavigationMenuDemo() {
                     </NavigationMenuItem>
 
                     <NavigationMenuItem>
-                        <Link href="/" legacyBehavior passHref>
+                        <Link href="/services" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Services
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                    <Link href="/docs" legacyBehavior passHref>
+                    <Link href="/blogs" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Blogs
                             </NavigationMenuLink>
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem className="">
-                        <Link href="/docs" legacyBehavior passHref>
+                        <Link href="/about" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 About
                             </NavigationMenuLink>
@@ -104,9 +104,9 @@ export default function NavigationMenuDemo() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <div className=" items-center hidden lg:flex">
+            <Link className=" items-center hidden lg:flex" href='/book-now'>
                 <Button size='lg' variant='navbar'>Book Now</Button>
-            </div>
+            </Link>
             <Sheet className='inline lg:hidden'>
                 <SheetTrigger className="inline lg:hidden">
                     <MenuIcon className="text-white inline lg:hidden " />
