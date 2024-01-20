@@ -1,13 +1,6 @@
 'use client'
 import React from 'react'
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
+import queryString from 'query-string';
 import { Label } from "@/components/ui/label"
 import {
     Tabs,
@@ -29,6 +22,12 @@ const fadeInUpVariants = {
 
 
 const DocData = () => {
+
+    const { search } = location;
+    const { city: urlCity } = queryString.parse(search);
+
+    const defaultCity = urlCity || 'mumbai';
+
 
     const [ref, inView] = useInView({
         triggerOnce: false,
@@ -58,7 +57,7 @@ const DocData = () => {
                     >Experts near your to experts of mega cities</motion.p>
             </div>
             <div className=' min-h-96 w-full'>
-                <Tabs defaultValue="near" className="w-full lg:w-2/3 mt-8 mx-auto">
+                <Tabs defaultValue={defaultCity} className="w-full lg:w-2/3 mt-8 mx-auto">
                 <motion.div
                     variants={fadeInUpVariants}
                     initial="hidden"
@@ -66,26 +65,26 @@ const DocData = () => {
                     transition={{ type: "spring", stiffness: 100, damping: 10, duration: 0.2, delay:0.6 }}
                 >
                     <TabsList className="grid w-full grid-cols-4">
-                        <TabsTrigger value="near">Nearby</TabsTrigger>
-                        <TabsTrigger value="mum">Mumbai</TabsTrigger>
-                        <TabsTrigger value="del">Delhi</TabsTrigger>
-                        <TabsTrigger value="kol">Kolkata</TabsTrigger>
+                        <TabsTrigger value="mumbai">Mumbai</TabsTrigger>
+                        <TabsTrigger value="bangalore">Bangalore</TabsTrigger>
+                        <TabsTrigger value="kolkata">Kolkata</TabsTrigger>
+                        <TabsTrigger value="chennai">Chennai</TabsTrigger>
                     </TabsList>
                 </motion.div>
                 
-                    <TabsContent value="near" className='text-white'>
-                        <Nearby where={6} />
+                    <TabsContent value="mumbai" className='text-white'>
+                        <Nearby where={6} city={'mumbai'} />
                     </TabsContent>
-                    <TabsContent value="mum" className='text-white'>
-                        <Nearby where={3} />
+                    <TabsContent value="bangalore" className='text-white'>
+                        <Nearby where={3} city={'bangalore'} />
 
                     </TabsContent>
-                    <TabsContent value="del" className='text-white'>
-                        <Nearby where={2} />
+                    <TabsContent value="kolkata" className='text-white'>
+                        <Nearby where={2} city={'kolkata'} />
 
                     </TabsContent>
-                    <TabsContent value="kol" className='text-white'>
-                        <Nearby where={4} />
+                    <TabsContent value="chennai" className='text-white'>
+                        <Nearby where={4} city={'chennai'} />
 
                     </TabsContent>
                 </Tabs>
