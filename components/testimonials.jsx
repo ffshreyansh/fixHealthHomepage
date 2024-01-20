@@ -47,7 +47,7 @@ const Testimonials = () => {
                     <CarouselItem>
                         <div className='flex flex-col items-center mx-auto w-full rounded-lg text-center bg-[#191919] border border-[#414141] py-10 px-5 lg:px-20'>
                             <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-10 h-10 rounded-full object-cover mx-auto' alt="" />
-                            <p className='font-regular italic mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi autem atque, ut iure explicabo accusamus ullam quisquam doloremque? Fuga, ducimus temporibus. Aperiam deserunt quidem expedita dolores?</p>
+                            <p className='font-regular italic mt-4'>fixhealth has helped my team and I stay on the same page. Previously, we were all over the board. Using fixhealth has definitely saved us time and money.</p>
                             <span className='font-bold mt-4'>Clark Kent</span>
                             <span className='text-sm'>Founder & CEO - SpaceX</span>
                             {/* <span className='text-xs mt-8 text-[#414141]'><MoveDownIcon/></span>     */}
@@ -56,7 +56,8 @@ const Testimonials = () => {
                     <CarouselItem>
                         <div className='flex flex-col items-center mx-auto w-full rounded-lg text-center bg-[#191919] border border-[#414141] py-10 px-5 lg:px-20'>
                             <img src="https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='w-10 h-10 rounded-full object-cover mx-auto' alt="" />
-                            <p className='font-regular italic mt-4'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi autem atque, ut iure explicabo accusamus ullam quisquam doloremque? Fuga, ducimus temporibus. Aperiam deserunt quidem expedita dolores?</p>
+                            <p className='font-regular italic mt-4'>Would definitely recommend fixhealth and will definitely be ordering again.
+</p>
                             <span className='font-bold mt-4'>Clark Kent</span>
                             <span className='text-sm'>Founder & CEO - SpaceX</span>
                             {/* <span className='text-xs mt-8 text-[#414141]'><MoveDownIcon/></span>     */}

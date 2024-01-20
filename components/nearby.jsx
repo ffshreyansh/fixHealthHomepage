@@ -36,7 +36,7 @@ const Nearby = ({ where, city }) => {
                                     <CardTitle>{doc.name}</CardTitle>
 
                                     <CardDescription>{doc.email}</CardDescription>
-                                    {/* <CardDescription className='text-xs bg-[#00abc1cc] rounded-full w-fit px-4 text-white py-1'>• Available</CardDescription> */}
+                                    <CardDescription>{doc.expertise}</CardDescription>
                                 </CardHeader>
                             </CardContent>
                             <CardFooter>

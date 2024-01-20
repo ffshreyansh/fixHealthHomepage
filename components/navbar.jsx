@@ -14,6 +14,15 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+
+import {
     Sheet,
     SheetContent,
     SheetDescription,
@@ -69,7 +78,7 @@ export default function NavigationMenuDemo() {
             <div className="flex items-center">
                 <img src="/fix.svg" alt="fix health logo" width={120} />
             </div>
-           
+
 
             <NavigationMenu className='hidden lg:inline'>
                 <NavigationMenuList>
@@ -89,7 +98,7 @@ export default function NavigationMenuDemo() {
                         </Link>
                     </NavigationMenuItem>
                     <NavigationMenuItem>
-                    <Link href="/blogs" legacyBehavior passHref>
+                        <Link href="/blogs" legacyBehavior passHref>
                             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                                 Blogs
                             </NavigationMenuLink>
@@ -104,9 +113,23 @@ export default function NavigationMenuDemo() {
                     </NavigationMenuItem>
                 </NavigationMenuList>
             </NavigationMenu>
-            <Link className=" items-center hidden lg:flex" href='/book-now'>
+            {/* <Link className=" items-center hidden lg:flex" href='/book-now'>
                 <Button size='lg' variant='navbar'>Book Now</Button>
-            </Link>
+            </Link> */}
+            <Dialog className='m-2'>
+                <DialogTrigger>
+                    <Button size='lg' variant='navbar' className='hidden lg:flex'>Book Now</Button>
+                </DialogTrigger>
+                <DialogContent>
+                    <DialogHeader>
+                        <DialogTitle className='text-center mb-8'>Book an Appointment for <strong>FREE</strong>  </DialogTitle>
+                        <DialogDescription className='mt-8'>
+                            <input type="text" name="" id="" className="w-full h-12 border border-[#414141] outline-none px-4 rounded-md" placeholder="Don't expect this form to be submitted." />
+                            <button className="w-full h-12 bg-black text-white font-semibold mt-4 rounded-md">Submit</button>
+                        </DialogDescription>
+                    </DialogHeader>
+                </DialogContent>
+            </Dialog>
             <Sheet className='inline lg:hidden'>
                 <SheetTrigger className="inline lg:hidden">
                     <MenuIcon className="text-white inline lg:hidden " />
@@ -118,12 +141,28 @@ export default function NavigationMenuDemo() {
 
                         <Link href='/'>Blogs</Link>
                         <Link href='/'>About</Link>
-                        <div className="flex items-center">
+                        {/* <div className="flex items-center">
                             <Button size='lg' variant='navbar'>Book Now</Button>
-                        </div>
+                        </div> */}
+                        <Dialog className='m-2'>
+                            <DialogTrigger>
+                                <Button size='lg' variant='navbar'>Book Now</Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                    <DialogTitle className='text-center mb-8'>Book an Appointment for <strong>FREE</strong>  </DialogTitle>
+                                    <DialogDescription className='mt-8'>
+                                        <input type="text" name="" id="" className="w-full h-12 border border-[#414141] outline-none px-4 rounded-md" placeholder="Don't expect this form to be submitted." />
+                                        <button className="w-full h-12 bg-black text-white font-semibold mt-4 rounded-md">Submit</button>
+                                    </DialogDescription>
+                                </DialogHeader>
+                            </DialogContent>
+                        </Dialog>
                     </div>
                 </SheetContent>
             </Sheet>
+
+
         </div>
     );
 }
