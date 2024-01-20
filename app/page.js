@@ -1,3 +1,4 @@
+
 import DocData from "@/components/DocData";
 import ConsultationForm from "@/components/consultation";
 import Doctors from "@/components/nearby";
@@ -7,14 +8,9 @@ import Testimonials from "@/components/testimonials";
 
 
 export default function Home() {
+ 
   return (
     <div className="bg-[#111111] h-full w-full">
- {/* <div className="bg-[#111111] w-full h-full absolute z-0">
-  
- </div> */}
-  {/* <div className="pp absolute w-full object-cover h-screen">
-
-  </div> */}
   <Navbar />
   <HomePage/>
   {/* <Doctors/> */}

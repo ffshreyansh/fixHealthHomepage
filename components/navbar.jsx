@@ -73,6 +73,11 @@ const components = [
 ];
 
 export default function NavigationMenuDemo() {
+    const [mounted, setMounted] = React.useState(false);
+
+    React.useEffect(()=>{
+        setMounted(true);
+    },[]);
     return (
         <div className="flex items-center justify-between py-5 px-3 lg:px-20 border-b border-[#191919]  fixed bg-[#111111] w-full">
             <div className="flex items-center">

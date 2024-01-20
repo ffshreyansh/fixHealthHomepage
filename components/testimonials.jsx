@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from './ui/carousel'
 import { MoveDownIcon } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -7,7 +7,11 @@ import { useInView } from 'react-intersection-observer';
 
 
 const Testimonials = () => {
+    const [mounted, setMounted] = useState(false);
 
+    useEffect(()=>{
+        setMounted(true);
+    },[]);
     const fadeInUpVariants = {
         hidden: { opacity: 0, y: 30 },
         visible: { opacity: 1, y: 0 },

@@ -7,6 +7,11 @@ import { Button } from './ui/button';
 //6ee90f0846mshc6caf06d5ec8664p17f505jsn3093d8908abc
 const Nearby = ({ where, city }) => {
     const [doctors, setDoctors] = useState([]);
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(()=>{
+        setMounted(true);
+    },[]);
 
     useEffect(() => {
         const apiUrl = `https://fixh.onrender.com/doctors?city=${encodeURIComponent(city)}`;

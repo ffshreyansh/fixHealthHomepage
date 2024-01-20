@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import queryString from 'query-string';
 import { Label } from "@/components/ui/label"
 import {
@@ -12,6 +12,7 @@ import { Button } from './ui/button'
 import Nearby from './nearby';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useRouter, useSearchParams } from 'next/navigation';
 
 
 const fadeInUpVariants = {
@@ -23,10 +24,16 @@ const fadeInUpVariants = {
 
 const DocData = () => {
 
-    const { search } = location;
-    const { city: urlCity } = queryString.parse(search);
+    const [mounted, setMounted] = useState(false);
 
-    const defaultCity = urlCity || 'mumbai';
+    useEffect(()=>{
+        setMounted(true);
+    }, [])
+
+    const searchParams = useSearchParams();
+    const search = searchParams.get('city')
+
+    const defaultCity = search || 'mumbai';
 
 
     const [ref, inView] = useInView({

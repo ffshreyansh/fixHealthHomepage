@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 import Image from 'next/image'
 import { motion } from 'framer-motion';
@@ -14,6 +14,11 @@ const fadeInUpVariants = {
     
 
 const HomePage = () => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(()=>{
+      setMounted(true);
+  }, [])
     const [ref, inView] = useInView({
         triggerOnce: true,
         rootMargin: '-30% 0px', // Adjust as needed
